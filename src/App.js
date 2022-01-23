@@ -19,7 +19,7 @@ const Dot = ({ color }) => {
 export default function App() {
   useEffect(() => {
     onSnapshot(collection(db, 'colors'), (snapshot) => {
-      console.log(snapshot.docs);
+      console.log(snapshot.docs.map((doc) => doc.data()));
     });
   });
   return (
